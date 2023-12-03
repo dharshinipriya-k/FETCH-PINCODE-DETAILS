@@ -1,1 +1,1 @@
-This repo contains code for fetching details of a particular Indian Post Office by entering Pincode.
+This repo contains code for fetching details of a particular Indian Post Office from an public API by entering Pincode.
