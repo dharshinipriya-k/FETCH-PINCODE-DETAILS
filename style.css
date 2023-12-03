@@ -1,0 +1,24 @@
+body {
+  text-align: center !important;
+  background-color: lavender !important;
+}
+
+#details {
+  margin-top: 5rem;
+  border: 2px solid crimson;
+  width: 500px;
+  margin-left: 20rem;
+  background-color: ivory;
+}
+
+#getDetails {
+  background-color: darkseagreen;
+}
+
+#getDetails:hover {
+  background-color: lightgreen;
+}
+
+#pin {
+  border: 2px solid;
+}
