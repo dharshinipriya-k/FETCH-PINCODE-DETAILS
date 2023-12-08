@@ -23,22 +23,41 @@ function success() {
   function displayData(data) {
     const input = pincode.value;
 
-    const displayDetails = document.createElement("div");
+    const table = document.createElement("table");
     const contain = document.getElementById("contain");
-    contain.append(displayDetails);
-    displayDetails.setAttribute("id", "details");
-    for (var i = 0; i < data[0].PostOffice.length; i++) {
-      displayDetails.innerHTML = `<p><b>Pincode:</b> ${input} </p>
-                         <p><b>Name: </b> ${data[0].PostOffice[i].Name}</p>
-                         <p><b>Circle: </b> ${data[0].PostOffice[i].Circle}</p>
-                         <p><b>District: </b> ${data[0].PostOffice[i].District}</p>
-                         <p><b>Division: </b> ${data[0].PostOffice[i].Division}</p>
-                         <p><b>Block: </b> ${data[0].PostOffice[i].Block}</p>
-                         <p><b>State: </b> ${data[0].PostOffice[i].State}</p>
-                         <p><b>Type: </b> ${data[0].PostOffice[i].BranchType}</p>
-                         `;
+    contain.append(table);
+    table.classList.add("table", "table-info", "table-striped-columns");
+    table.innerHTML = `<thead>
+    <tr>
+      <th scope="col">Pincode</th>
+      <th scope="col">Name</th>
+      <th scope="col">Circle</th>
+      <th scope="col">District</th>
+      <th scope="col">Division</th>
+      <th scope="col">Block</th>
+      <th scope="col">State</th>
+      <th scope="col">Type</th>
+    </tr>
+  </thead>
+  `;
 
-      contain.append(displayDetails);
+    const tbody = document.createElement("tbody");
+    table.append(tbody);
+    for (var i = 0; i < data[0].PostOffice.length; i++) {
+      tbody.innerHTML += `
+        <tr>
+          <th scope="row">${input}</th>
+          <td>${data[0].PostOffice[i].Name}</td>
+          <td>${data[0].PostOffice[i].Circle}</td>
+          <td>${data[0].PostOffice[i].District}</td>
+          <td>${data[0].PostOffice[i].Division}</td>
+          <td>${data[0].PostOffice[i].Block}</td>
+          <td>${data[0].PostOffice[i].State}</td>
+          <td>${data[0].PostOffice[i].BranchType}</td>
+        </tr> `;
+
+      // contain.append(table);
+      table.append(tbody);
     }
   }
 }

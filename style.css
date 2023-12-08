@@ -3,12 +3,8 @@ body {
   background-color: lavender !important;
 }
 
-#details {
-  margin-top: 5rem;
-  border: 2px solid crimson;
-  width: 500px;
-  margin-left: 23rem;
-  background-color: ivory;
+table {
+  margin-top: 3rem;
 }
 
 #getDetails {
